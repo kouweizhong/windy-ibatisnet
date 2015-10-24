@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D7205AF3-02BD-4C9F-8A23-FD05640E6B14}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IBatisNet.DataMapper</RootNamespace>
+    <AssemblyName>IBatisNet.DataMapper</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\Heren.HDPMP\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.DynamicProxy">
+      <HintPath>..\..\Include\Castle.DynamicProxy.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Delegates.cs" />
+    <Compile Include="Enumeration.cs" />
+    <Compile Include="ExecuteEventArgs.cs" />
+    <Compile Include="ISqlMapper.cs" />
+    <Compile Include="ISqlMapSession.cs" />
+    <Compile Include="NurDocMapper.cs" />
+    <Compile Include="Mapper.cs" />
+    <Compile Include="Proxy\ILazyFactory.cs" />
+    <Compile Include="Proxy\LazyFactoryBuilder.cs" />
+    <Compile Include="Proxy\LazyList.cs" />
+    <Compile Include="Proxy\LazyListFactory.cs" />
+    <Compile Include="Proxy\LazyListGeneric.cs" />
+    <Compile Include="Proxy\LazyListGenericFactory.cs" />
+    <Compile Include="Proxy\LazyLoadInterceptor.cs" />
+    <Compile Include="Proxy\LazyLoadProxyFactory.cs" />
+    <Compile Include="Scope\ConfigurationScope.cs" />
+    <Compile Include="Scope\ErrorContext.cs" />
+    <Compile Include="Scope\IScope.cs" />
+    <Compile Include="Scope\RequestScope.cs" />
+    <Compile Include="SessionStore\AbstractSessionStore.cs" />
+    <Compile Include="SessionStore\CallContextSessionStore.cs" />
+    <Compile Include="SessionStore\HybridWebThreadSessionStore.cs" />
+    <Compile Include="SessionStore\ISessionStore.cs" />
+    <Compile Include="SessionStore\SessionStoreFactory .cs" />
+    <Compile Include="SessionStore\WebSessionStore.cs" />
+    <Compile Include="SqlMapper.cs" />
+    <Compile Include="SqlMapSession.cs" />
+    <Compile Include="TypeHandlers\AnsiStringTypeHandler.cs" />
+    <Compile Include="TypeHandlers\BaseTypeHandler.cs" />
+    <Compile Include="TypeHandlers\BooleanTypeHandler.cs" />
+    <Compile Include="TypeHandlers\ByteArrayTypeHandler.cs" />
+    <Compile Include="TypeHandlers\ByteTypeHandler.cs" />
+    <Compile Include="TypeHandlers\CharTypeHandler.cs" />
+    <Compile Include="TypeHandlers\CustomTypeHandler.cs" />
+    <Compile Include="TypeHandlers\DateTimeTypeHandler.cs" />
+    <Compile Include="TypeHandlers\DBNullTypeHandler.cs" />
+    <Compile Include="TypeHandlers\DecimalTypeHandler.cs" />
+    <Compile Include="TypeHandlers\DoubleTypeHandler.cs" />
+    <Compile Include="TypeHandlers\EnumTypeHandler.cs" />
+    <Compile Include="TypeHandlers\GuidTypeHandler.cs" />
+    <Compile Include="TypeHandlers\Int16TypeHandler.cs" />
+    <Compile Include="TypeHandlers\Int32TypeHandler.cs" />
+    <Compile Include="TypeHandlers\Int64TypeHandler.cs" />
+    <Compile Include="TypeHandlers\IParameterSetter.cs" />
+    <Compile Include="TypeHandlers\IResultGetter.cs" />
+    <Compile Include="TypeHandlers\ITypeHandler.cs" />
+    <Compile Include="TypeHandlers\ITypeHandlerCallback.cs" />
+    <Compile Include="TypeHandlers\Nullables\NullableBooleanTypeHandler.cs" />
+    <Compile Include="TypeHandlers\Nullables\NullableByteTypeHandler.cs" />
+    <Compile Include="TypeHandlers\Nullables\NullableCharTypeHandler.cs" />
+    <Compile Include="TypeHandlers\Nullables\NullableDateTimeTypeHandler.cs" />
+    <Compile Include="TypeHandlers\Nullables\NullableDecimalTypeHandler.cs" />
+    <Compile Include="TypeHandlers\Nullables\NullableDoubleTypeHandler.cs" />
+    <Compile Include="TypeHandlers\Nullables\NullableGuidTypeHandler.cs" />
+    <Compile Include="TypeHandlers\Nullables\NullableInt16TypeHandler.cs" />
+    <Compile Include="TypeHandlers\Nullables\NullableInt32TypeHandler.cs" />
+    <Compile Include="TypeHandlers\Nullables\NullableInt64TypeHandler.cs" />
+    <Compile Include="TypeHandlers\Nullables\NullableSByteTypeHandler.cs" />
+    <Compile Include="TypeHandlers\Nullables\NullableSingleTypeHandler.cs" />
+    <Compile Include="TypeHandlers\Nullables\NullableTimeSpanTypeHandler.cs" />
+    <Compile Include="TypeHandlers\Nullables\NullableUInt16TypeHandler.cs" />
+    <Compile Include="TypeHandlers\Nullables\NullableUInt32TypeHandler.cs" />
+    <Compile Include="TypeHandlers\Nullables\NullableUInt64TypeHandler.cs" />
+    <Compile Include="TypeHandlers\ObjectTypeHandler.cs" />
+    <Compile Include="TypeHandlers\ParameterSetterImpl.cs" />
+    <Compile Include="TypeHandlers\ResultGetterImpl.cs" />
+    <Compile Include="TypeHandlers\SByteTypeHandler.cs" />
+    <Compile Include="TypeHandlers\SingleTypeHandler.cs" />
+    <Compile Include="TypeHandlers\StringTypeHandler.cs" />
+    <Compile Include="TypeHandlers\TimeSpanTypeHandler.cs" />
+    <Compile Include="TypeHandlers\TypeHandlerFactory.cs" />
+    <Compile Include="TypeHandlers\UInt16TypeHandler.cs" />
+    <Compile Include="TypeHandlers\UInt32TypeHandler.cs" />
+    <Compile Include="TypeHandlers\UInt64TypeHandler.cs" />
+    <Compile Include="TypeHandlers\UnknownTypeHandler.cs" />
+    <Compile Include="Commands\DataReaderDecorator.cs" />
+    <Compile Include="Commands\DataReaderTransformer.cs" />
+    <Compile Include="Commands\DbCommandDecorator.cs" />
+    <Compile Include="Commands\DefaultPreparedCommand.cs" />
+    <Compile Include="Commands\IDbDataParameterCollection.cs" />
+    <Compile Include="Commands\InMemoryDataReader.cs" />
+    <Compile Include="Commands\IPreparedCommand.cs" />
+    <Compile Include="Commands\PreparedCommandFactory.cs" />
+    <Compile Include="Configuration\Alias\TypeAlias.cs" />
+    <Compile Include="Configuration\Alias\TypeHandler.cs" />
+    <Compile Include="Configuration\Cache\CacheKey.cs" />
+    <Compile Include="Configuration\Cache\CacheModel.cs" />
+    <Compile Include="Configuration\Cache\Fifo\FifoCacheController.cs" />
+    <Compile Include="Configuration\Cache\FlushInterval.cs" />
+    <Compile Include="Configuration\Cache\ICacheController.cs" />
+    <Compile Include="Configuration\Cache\Lru\LruCacheController.cs" />
+    <Compile Include="Configuration\Cache\Memory\MemoryCacheControler.cs" />
+    <Compile Include="Configuration\Cache\Memory\MemoryCacheLevel.cs" />
+    <Compile Include="Configuration\DomSqlMapBuilder.cs" />
+    <Compile Include="Configuration\ParameterMapping\InlineParameterMapParser.cs" />
+    <Compile Include="Configuration\ParameterMapping\ParameterMap.cs" />
+    <Compile Include="Configuration\ParameterMapping\ParameterProperty.cs" />
+    <Compile Include="Configuration\ParameterMapping\ParameterPropertyCollection.cs" />
+    <Compile Include="Configuration\ResultMapping\ArgumentProperty.cs" />
+    <Compile Include="Configuration\ResultMapping\AutoResultMap.cs" />
+    <Compile Include="Configuration\ResultMapping\Discriminator.cs" />
+    <Compile Include="Configuration\ResultMapping\IResultMap.cs" />
+    <Compile Include="Configuration\ResultMapping\NullResultMap.cs" />
+    <Compile Include="Configuration\ResultMapping\ResultMap.cs" />
+    <Compile Include="Configuration\ResultMapping\ResultMapCollection.cs" />
+    <Compile Include="Configuration\ResultMapping\ResultProperty.cs" />
+    <Compile Include="Configuration\ResultMapping\ResultPropertyCollection.cs" />
+    <Compile Include="Configuration\ResultMapping\SubMap.cs" />
+    <Compile Include="Configuration\Serializers\ArgumentPropertyDeSerializer.cs" />
+    <Compile Include="Configuration\Serializers\CacheModelDeSerializer.cs" />
+    <Compile Include="Configuration\Serializers\DeleteDeSerializer.cs" />
+    <Compile Include="Configuration\Serializers\DeSerializerFactory.cs" />
+    <Compile Include="Configuration\Serializers\DiscriminatorDeSerializer.cs" />
+    <Compile Include="Configuration\Serializers\DynamicDeSerializer.cs" />
+    <Compile Include="Configuration\Serializers\IDeSerializer.cs" />
+    <Compile Include="Configuration\Serializers\InsertDeSerializer.cs" />
+    <Compile Include="Configuration\Serializers\IsEmptyDeSerializer.cs" />
+    <Compile Include="Configuration\Serializers\IsEqualDeSerializer.cs" />
+    <Compile Include="Configuration\Serializers\IsGreaterEqualDeSerializer.cs" />
+    <Compile Include="Configuration\Serializers\IsGreaterThanDeSerializer.cs" />
+    <Compile Include="Configuration\Serializers\IsLessEqualDeSerializer.cs" />
+    <Compile Include="Configuration\Serializers\IsLessThanDeSerializer.cs" />
+    <Compile Include="Configuration\Serializers\IsNotEmptyDeSerializer.cs" />
+    <Compile Include="Configuration\Serializers\IsNotEqualDeSerializer.cs" />
+    <Compile Include="Configuration\Serializers\IsNotNullDeSerializer.cs" />
+    <Compile Include="Configuration\Serializers\IsNotParameterPresentDeSerializer.cs" />
+    <Compile Include="Configuration\Serializers\IsNotPropertyAvailableDeSerializer.cs" />
+    <Compile Include="Configuration\Serializers\IsNullDeSerializer.cs" />
+    <Compile Include="Configuration\Serializers\IsParameterPresentDeSerializer.cs" />
+    <Compile Include="Configuration\Serializers\IsPropertyAvailableDeSerializer.cs" />
+    <Compile Include="Configuration\Serializers\IterateSerializer.cs" />
+    <Compile Include="Configuration\Serializers\ParameterMapDeSerializer.cs" />
+    <Compile Include="Configuration\Serializers\ParameterPropertyDeSerializer.cs" />
+    <Compile Include="Configuration\Serializers\ProcedureDeSerializer.cs" />
+    <Compile Include="Configuration\Serializers\ResultMapDeSerializer.cs" />
+    <Compile Include="Configuration\Serializers\ResultPropertyDeSerializer.cs" />
+    <Compile Include="Configuration\Serializers\SelectDeSerializer.cs" />
+    <Compile Include="Configuration\Serializers\SqlDeSerializer.cs" />
+    <Compile Include="Configuration\Serializers\StatementDeSerializer.cs" />
+    <Compile Include="Configuration\Serializers\SubMapDeSerializer.cs" />
+    <Compile Include="Configuration\Serializers\TypeAliasDeSerializer.cs" />
+    <Compile Include="Configuration\Serializers\TypeHandlerDeSerializer.cs" />
+    <Compile Include="Configuration\Serializers\UpdateDeSerializer.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\DynamicSql.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\Elements\BaseTag.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\Elements\Conditional.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\Elements\Dynamic.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\Elements\IDynamicParent.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\Elements\IsEmpty.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\Elements\IsEqual.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\Elements\IsGreaterEqual.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\Elements\IsGreaterThan.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\Elements\IsLessEqual.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\Elements\IsLessThan.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\Elements\IsNotEmpty.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\Elements\IsNotEqual.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\Elements\IsNotNull.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\Elements\IsNotParameterPresent.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\Elements\IsNotPropertyAvailable.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\Elements\IsNull.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\Elements\IsParameterPresent.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\Elements\IsPropertyAvailable.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\Elements\Iterate.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\Elements\SqlTag.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\Handlers\BaseTagHandler.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\Handlers\ConditionalTagHandler.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\Handlers\DynamicTagHandler.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\Handlers\IsEmptyTagHandler.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\Handlers\IsEqualTagHandler.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\Handlers\IsGreaterEqualTagHandler.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\Handlers\IsGreaterThanTagHandler.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\Handlers\IsLessEqualTagHandler.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\Handlers\IsLessThanTagHandler.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\Handlers\IsNotEmptyTagHandler.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\Handlers\IsNotEqualTagHandler.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\Handlers\IsNotNullTagHandler.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\Handlers\IsNotParameterPresentTagHandler.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\Handlers\IsNotPropertyAvailableTagHandler.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\Handlers\IsNullTagHandler.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\Handlers\IsParameterPresentTagHandler.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\Handlers\IsPropertyAvailableTagHandler.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\Handlers\ISqlTagHandler.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\Handlers\IterateContext.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\Handlers\IterateTagHandler.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\Handlers\SqlTagContext.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\ISqlChild.cs" />
+    <Compile Include="Configuration\Sql\Dynamic\SqlText.cs" />
+    <Compile Include="Configuration\Sql\ISql.cs" />
+    <Compile Include="Configuration\Sql\SimpleDynamic\SimpleDynamicSql.cs" />
+    <Compile Include="Configuration\Sql\Static\ProcedureSql.cs" />
+    <Compile Include="Configuration\Sql\Static\StaticSql.cs" />
+    <Compile Include="Configuration\Statements\Delete.cs" />
+    <Compile Include="Configuration\Statements\Generate.cs" />
+    <Compile Include="Configuration\Statements\Insert.cs" />
+    <Compile Include="Configuration\Statements\IStatement.cs" />
+    <Compile Include="Configuration\Statements\PreparedStatement.cs" />
+    <Compile Include="Configuration\Statements\PreparedStatementFactory.cs" />
+    <Compile Include="Configuration\Statements\Procedure.cs" />
+    <Compile Include="Configuration\Statements\Select.cs" />
+    <Compile Include="Configuration\Statements\SelectKey.cs" />
+    <Compile Include="Configuration\Statements\SqlGenerator.cs" />
+    <Compile Include="Configuration\Statements\Statement.cs" />
+    <Compile Include="Configuration\Statements\Update.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataExchange\BaseDataExchange.cs" />
+    <Compile Include="DataExchange\ComplexDataExchange.cs" />
+    <Compile Include="DataExchange\DataExchangeFactory.cs" />
+    <Compile Include="DataExchange\DictionaryDataExchange.cs" />
+    <Compile Include="DataExchange\DotNetObjectDataExchange.cs" />
+    <Compile Include="DataExchange\IDataExchange.cs" />
+    <Compile Include="DataExchange\ListDataExchange.cs" />
+    <Compile Include="DataExchange\PrimitiveDataExchange.cs" />
+    <Compile Include="Exceptions\DataMapperException.cs" />
+    <Compile Include="MappedStatements\ArgumentStrategy\ArgumentStrategyFactory.cs" />
+    <Compile Include="MappedStatements\ArgumentStrategy\DefaultStrategy.cs" />
+    <Compile Include="MappedStatements\ArgumentStrategy\IArgumentStrategy.cs" />
+    <Compile Include="MappedStatements\ArgumentStrategy\ResultMapStrategy.cs" />
+    <Compile Include="MappedStatements\ArgumentStrategy\SelectArrayStrategy.cs" />
+    <Compile Include="MappedStatements\ArgumentStrategy\SelectGenericListStrategy.cs" />
+    <Compile Include="MappedStatements\ArgumentStrategy\SelectListStrategy.cs" />
+    <Compile Include="MappedStatements\ArgumentStrategy\SelectObjectStrategy.cs" />
+    <Compile Include="MappedStatements\ArgumentStrategy\SelectStrategy.cs" />
+    <Compile Include="MappedStatements\BaseStrategy.cs" />
+    <Compile Include="MappedStatements\CachingStatement.cs" />
+    <Compile Include="MappedStatements\DeleteMappedStatement.cs" />
+    <Compile Include="MappedStatements\IMappedStatement.cs" />
+    <Compile Include="MappedStatements\InsertMappedStatement.cs" />
+    <Compile Include="MappedStatements\MappedStatement.cs" />
+    <Compile Include="MappedStatements\PaginatedList.cs" />
+    <Compile Include="MappedStatements\PostBindind.cs" />
+    <Compile Include="MappedStatements\PostSelectStrategy\ArrayStrategy.cs" />
+    <Compile Include="MappedStatements\PostSelectStrategy\GenericListStrategy.cs" />
+    <Compile Include="MappedStatements\PostSelectStrategy\IPostSelectStrategy.cs" />
+    <Compile Include="MappedStatements\PostSelectStrategy\ListStrategy.cs" />
+    <Compile Include="MappedStatements\PostSelectStrategy\ObjectStrategy.cs" />
+    <Compile Include="MappedStatements\PostSelectStrategy\PostSelectStrategyFactory.cs" />
+    <Compile Include="MappedStatements\PostSelectStrategy\StrongTypedListStrategy.cs" />
+    <Compile Include="MappedStatements\PropertStrategy\DefaultStrategy.cs" />
+    <Compile Include="MappedStatements\PropertStrategy\GroupByStrategy.cs" />
+    <Compile Include="MappedStatements\PropertStrategy\IPropertyStrategy.cs" />
+    <Compile Include="MappedStatements\PropertStrategy\PropertyStrategyFactory.cs" />
+    <Compile Include="MappedStatements\PropertStrategy\ResultMapStrategy.cs" />
+    <Compile Include="MappedStatements\PropertStrategy\SelectArrayStrategy.cs" />
+    <Compile Include="MappedStatements\PropertStrategy\SelectGenericListStrategy.cs" />
+    <Compile Include="MappedStatements\PropertStrategy\SelectListStrategy.cs" />
+    <Compile Include="MappedStatements\PropertStrategy\SelectObjectStrategy.cs" />
+    <Compile Include="MappedStatements\PropertStrategy\SelectStrategy.cs" />
+    <Compile Include="MappedStatements\ReaderAutoMapper.cs" />
+    <Compile Include="MappedStatements\ResultStrategy\AutoMapStrategy.cs" />
+    <Compile Include="MappedStatements\ResultStrategy\DictionaryStrategy.cs" />
+    <Compile Include="MappedStatements\ResultStrategy\GroupByStrategy.cs" />
+    <Compile Include="MappedStatements\ResultStrategy\IResultStrategy.cs" />
+    <Compile Include="MappedStatements\ResultStrategy\ListStrategy.cs" />
+    <Compile Include="MappedStatements\ResultStrategy\MapStrategy.cs" />
+    <Compile Include="MappedStatements\ResultStrategy\ObjectStrategy.cs" />
+    <Compile Include="MappedStatements\ResultStrategy\ResultClassStrategy.cs" />
+    <Compile Include="MappedStatements\ResultStrategy\ResultMapStrategy.cs" />
+    <Compile Include="MappedStatements\ResultStrategy\ResultStrategyFactory.cs" />
+    <Compile Include="MappedStatements\ResultStrategy\SimpleTypeStrategy.cs" />
+    <Compile Include="MappedStatements\SelectMappedStatement.cs" />
+    <Compile Include="MappedStatements\UpdateMappedStatement.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="MappedStatements\ResultStrategy\ClassDiagram.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <EmbeddedResource Include="SqlMap.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SqlMapConfig.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IBatisNet.Common\IBatisNet.Common.csproj">
+      <Project>{0400237a-abe0-4c80-b2a4-75ea1a96b664}</Project>
+      <Name>IBatisNet.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
