@@ -1,11 +1,12 @@
-﻿using Heren.MedQC.DAO.Entity;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Windy.WebMVC.DAO;
+using Windy.WebMVC.DAO.Entity;
 
-namespace Heren.MedQC.DAO
+namespace Windy.WebMVC.DAO
 {
     public class OperationDao:BaseDao
     {
@@ -32,7 +33,7 @@ namespace Heren.MedQC.DAO
         /// <returns></returns>
         public IList<OperationInfo> GetOperationInfos(OperationInfo operationInfo)
         {
-            var reValue = SqlMapper.QueryForList<OperationInfo>("GetOperationInfos", operationInfo);
+            var reValue = NurDocSqlMapper.QueryForList<OperationInfo>("GetOperationInfos", operationInfo);
             logger.Debug("GetOperationInfos:" + (reValue == null ? 0 : reValue.Count));
             return reValue;
         }
