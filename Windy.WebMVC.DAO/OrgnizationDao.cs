@@ -33,7 +33,7 @@ namespace Windy.WebMVC.DAO
         public IList<Orgnization> GetOrgnizations(Orgnization orgnization)
         {
             var reValue = SqlMapper.QueryForList<Orgnization>("GetOrgnizations", orgnization);
-            logger.Debug("GetOrgnizations:" + (reValue == null ? 0 : reValue.Count));
+              logger.Debug("GetOrgnizations:" + (reValue == null ? 0 : reValue.Count));
             return reValue;
         }
         /// <summary>

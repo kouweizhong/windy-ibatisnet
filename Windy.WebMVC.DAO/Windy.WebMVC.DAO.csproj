@@ -64,6 +64,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Include\IBatisNet.DataMapper.dll</HintPath>
     </Reference>
+    <Reference Include="MySql.Data, Version=5.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Include\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -83,6 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="bin\Debug\log4net.config" />
     <None Include="bin\Debug\Maps\OperationDaoMap.config" />
     <None Include="bin\Debug\Maps\OperationInfoMap.config" />
     <None Include="bin\Debug\Maps\OrgnizationDaoMap.config" />
